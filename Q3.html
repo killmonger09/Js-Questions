@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let count = 0;
+
+        function countVowels (word) {
+            const vowels = ['a','e','i','o','u'];
+
+            for (let i = 0; i < word.length; i++) {
+               /* if(word[i] === vowels[0]) {
+                    count++;
+                }
+                else if(word[i] === vowels[1]) {
+                    count++;
+                }
+                else if(word[i] === vowels[2]) {
+                    count++;
+                }
+                else if(word[i] === vowels[3]) {
+                    count++;
+                }
+                else if(word[i] === vowels[4]) {
+                    count++;
+                }
+                */
+               if (vowels.includes(word[i])) {
+                count++
+               }
+            }
+
+            return count;
+        }
+        const str = 'javascript';
+        console.log(countVowels(str));
+
+    </script>
+</body>
+</html>
