@@ -16,11 +16,11 @@
         ;
 
         // console.log(num.toString().split(',').map(Number))
-     function flat(arr) {
+     function flat(arr, level = 100) {
         const result = [];
         arr.forEach(element => {
-            if(Array.isArray(element)) {
-                result.push(...flat(element))
+            if(Array.isArray(element) && level > 0) {
+                result.push(...flat(element, level - 1))
             } else {
                 result.push(element)
             }
@@ -29,7 +29,7 @@
         return result;
      }
 
-     console.log(flat(num))
+     console.log(flat(num, 2))
     </script>
 </body>
 </html>
