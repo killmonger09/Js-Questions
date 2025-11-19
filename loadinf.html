@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loading.css">
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <div class="inner"></div>
+        </div>
+        <p class="dis"></p>
+        <button class="button">Download</button>
+    </div>
+
+    <script>
+        let intervalId;
+        const dis = document.querySelector('.dis')
+        const btn = document.querySelector('.button')
+        btn.addEventListener('click', () => {
+            if(intervalId) return '';
+    
+        const inner =  document.querySelector('.inner');
+        let a = 0;
+        intervalId = setInterval(() => {
+            a++;
+            inner.style.width = `${a}%`
+            dis.innerHTML = `${a}%`;
+            
+        },100)
+
+        
+
+        setTimeout(() => {
+            console.log(intervalId)
+            clearInterval(intervalId);
+            btn.innerHTML='Downloaded'
+            intervalId = null;
+            console.log(intervalId)
+        },10000)
+        })
+
+        
+        
+    </script>
+    
+</body>
+</html>
